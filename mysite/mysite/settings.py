@@ -54,7 +54,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],  # 寻找html模版的路径，指定当前根目录下templates的目录
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
