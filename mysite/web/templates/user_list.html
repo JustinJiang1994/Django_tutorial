@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<h1>{{message}}</h1>
+	<ul>
+		{% for item in data_list %}
+			<li>{{item}}</li>
+		{% endfor %}
+	</ul>
+
+	<a> 直接获取索引0：{{data_list.0}}</a>
+	<a> 直接获取索引1：{{data_list.1}}</a>
+	<a> 直接获取索引2：{{data_list.2}}</a>
+
+	<h1>字典循环-获取键</h1>
+	<ul>
+		{% for item in mapping_dict.keys %}
+			<li>{{ item }}</li>
+		{% endfor %}
+	</ul>
+
+	<h1>字典循环-获取值</h1>
+	<ul>
+		{% for item in mapping_dict.values %}
+			<li>{{ item }}</li>
+		{% endfor %}
+	</ul>
+
+	<h1>字典循环-同时获取键与值</h1>
+	<ul>
+		{% for k, v in mapping_dict.items %}
+			<li>current key is {{ k }}, its value is {{v}}</li>
+		{% endfor %}
+	</ul>
+
+</body>
+
+</html>
