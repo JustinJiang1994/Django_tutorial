@@ -15,10 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.shortcuts import HttpResponse
-
-def login(request):
-    return HttpResponse("登陆页面")
+from web.views import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
