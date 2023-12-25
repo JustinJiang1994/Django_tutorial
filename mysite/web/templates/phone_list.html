@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<h1>号码列表</h1>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>ID</td>
+				<td>手机号</td>
+				<td>归属地</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>test1</td>
+				<td>test1</td>
+				<td>test上海</td>
+			</tr>
+			{% for row in data %}
+			<tr>
+			<td>{{row.id}}</td>
+			<td>{{row.phone}}</td>
+			<td>{{row.city}}</td>
+			</tr>
+			{% endfor %}
+
+
+		</tbody>
+	</table>
+
+</body>
+
+</html>
