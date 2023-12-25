@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'web.apps.WebConfig'  # 若将html模版路径移动至app folder底下，则需要在这里注册app
 ]
 
 MIDDLEWARE = [
