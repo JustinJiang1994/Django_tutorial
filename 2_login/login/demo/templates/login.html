@@ -1,0 +1,62 @@
+<!--
+Filename: /Users/justin/code/django_tutorial/login/demo/template/login.html
+Path: /Users/justin/code/django_tutorial/login/demo/template
+Created Date: Sunday, October 8th 2023, 11:17:29 am
+Author: Justin Jiang
+
+Copyright (c) 2023 Justin Jinag Inc.
+-->
+
+
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>login.html</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-3.4.1/css/bootstrap.min.css' %}">
+    <style>
+        .login-box {
+            width: 400px;
+            height: 280px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #dddddd;
+            margin-top: 300px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .login-box h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>登陆界面</h1>
+    <div class="login-box">
+        <h2>用户登陆</h2>
+        <!-- 这里会对/login/有两种请求，到底是POST还是GET-->
+        <form method="post" action="/login/">
+            <!-- 需要在form表单中加上csrf_token这行，增加一个隐藏的动态的input框为一随机字符串，会在提交时自己提交过去，作为是否为正常Django的校验 -->
+            {% csrf_token %}
+            <div class="form-group">
+                <label>用户名</label>
+                <!-- 需要设置name才会在POST请求时将其提交至后台读取 -->
+                <input type="text" class="form-control" placeholder="请输入用户名" name="user">
+            </div>
+            <div class="form-group">
+                <label>密码</label>
+                <!-- 需要设置name才会在POST请求时将其提交至后台读取 -->
+                <input type="password" class="form-control" placeholder="请输入密码" name="pwd">
+            </div>
+            <button type="submit" class="btn btn-primary">提 交</button>
+            <span style="color: red;">{{ error }}</span>
+        </form>
+    </div>
+
+</body>
+
+</html>
